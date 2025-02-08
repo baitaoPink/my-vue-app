@@ -1,0 +1,12 @@
+{
+    "i18n-ally.localesPaths": [
+        "src/locales"
+    ],
+    "editor.formatOnSave": true,
+    "prettier.trailingComma": "none",  // 删除多余逗号
+    "prettier.printWidth": 80,         // 设置行宽
+    "prettier.singleQuote": true,      // 使用单引号
+    "prettier.bracketSpacing": true,   // 保持对象字面量括号内有空格
+    "prettier.endOfLine": "lf",        // 强制使用 LF 行尾符
+    "prettier.semi": true              // 强制每个语句末尾加分号
+}
