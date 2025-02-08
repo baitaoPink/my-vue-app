@@ -1,31 +1,41 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div class="text-center flex flex-col items-center">
-    <a href="https://vite.dev" target="_blank" >
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app">
+    <div class="sidebar flex flex-col">
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+      <!-- <router-link to="/settings">Settings</router-link> -->
+    </div>
+
+    <div class="content">
+      <router-view></router-view>  <!-- 路由内容渲染在这里 -->
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
+<script>
+
+export default {
+  name: 'App',
+  components: {
+    // 'vant-nav-bar': NavBar
+  }
+};
+</script>
+
 <style scoped>
-@import "tailwindcss";
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#app {
+  display: flex;
+  height: 100vh;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
 }
 </style>

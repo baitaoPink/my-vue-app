@@ -1,15 +1,10 @@
-// import { createApp } from 'vue'
-// import './style.css'
-// import App from './App.vue'
-
-// createApp(App).mount('#app')
-
-
 import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
 import App from './App.vue'
 import En from './locales/en'
 import Zh from './locales/zh'
+import router from './router';
+import 'vant/lib/index.css';
 
 const i18n = createI18n({
   legacy: false,
@@ -22,4 +17,5 @@ const i18n = createI18n({
 
 createApp(App)
   .use(i18n)
+  .use(router)
   .mount('#app')

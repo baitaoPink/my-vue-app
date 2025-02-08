@@ -4,6 +4,7 @@ import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import RemoveConsole from 'vite-plugin-remove-console'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -15,6 +16,12 @@ export default defineConfig({
     AutoImport({
       imports: ['vue'], // 自动导入 Vue 的 API，如 ref、reactive 等
       dts: 'src/auto-imports.d.ts' // 生成自动导入声明文件
-    })
-  ]
+    }),
+    
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')  // 确保这里配置正确
+    }
+  }
 })
